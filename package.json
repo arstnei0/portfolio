@@ -1,0 +1,22 @@
+{
+	"name": "zihan-portfolio",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "prettier -w . --plugin-search-dir ."
+	},
+	"dependencies": {
+		"@astrojs/solid-js": "^1.2.3",
+		"@kobalte/core": "^0.4.0",
+		"astro": "^1.9.2",
+		"sass": "^1.57.1",
+		"solid-js": "^1.6.9",
+		"stylus": "^0.59.0"
+	}
+}

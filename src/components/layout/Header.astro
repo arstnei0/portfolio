@@ -1,0 +1,55 @@
+---
+import { SITE_URL } from "~/config"
+import A from "../primitive/A.astro"
+---
+
+<header>
+	<div>
+		<div id="avatar">
+			<A href={SITE_URL}>
+				<img src="/avatar.webp" width="30" height="30" />
+			</A>
+		</div>
+		<div id="title-of-website">
+			<A href={SITE_URL}>Zihan Chen</A>
+		</div>
+	</div>
+	<div>
+		<div id="github-link">
+			<A target="_blank" href="https://github.com/zihan-ch">Github</A>
+		</div>
+		<div id="twitter-link">
+			<A target="_blank" href="https://twitter.com/zihanch">Twitter</A>
+		</div>
+	</div>
+</header>
+
+<style lang="sass">
+	@import '../../styles/global.sass'
+
+	header
+		$margin-side: 1em
+		margin-left: $margin-side
+		margin-right: $margin-side
+		margin-top: 0.1em
+		margin-bottom: 1em
+		display: flex
+		justify-content: space-between
+		align-items: center
+		z-index: 300
+
+		& > *
+			display: flex
+
+			& > *
+				$margin: .5em
+				margin-left: $margin
+				margin-right: $margin
+
+		& *
+			color: $font-color-primary
+
+	#title-of-website
+		font-weight: 500
+		font-size: 1.3em
+</style>

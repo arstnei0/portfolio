@@ -1,0 +1,12 @@
+@import "../../../styles/global.sass";
+
+button {
+	background-color: $bg-color;
+	border: none;
+	padding: 0.3rem 0.6rem;
+	text-decoration: none;
+	font-size: $font-size-big;
+	outline: 0;
+	color: $font-color-accent;
+	font-weight: 500;
+}

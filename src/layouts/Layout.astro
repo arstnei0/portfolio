@@ -1,0 +1,32 @@
+---
+import Header from "~/components/layout/Header.astro"
+import { Cursor } from "../components/decorative/cursor/Cursor"
+import "~/styles/global.sass"
+import Footer from "~/components/layout/Footer.astro"
+
+export interface Props {
+	title: string
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/avatar.webp" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<Cursor client:idle />
+		<main>
+			<slot />
+		</main>
+
+		<Footer />
+	</body>
+</html>

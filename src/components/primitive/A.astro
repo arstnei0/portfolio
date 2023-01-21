@@ -1,0 +1,12 @@
+---
+import type { HTMLAttributes } from "astro/types"
+import { Hoverable } from "../decorative/cursor/Cursor"
+
+export type Props = HTMLAttributes<"a">
+
+const props = Astro.props
+---
+
+<Hoverable client:idle>
+	<a {...props}><slot /></a>
+</Hoverable>
