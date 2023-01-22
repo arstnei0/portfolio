@@ -39,9 +39,13 @@ export const HomeParallaxPart1: Component = () => {
 								<div id="title-p3">effects</div>
 
 								<div data-atropos-offset="-20" id="peep-11">
-									<img src={Peep11} />
+									<img
+										alt="illustration peep 11"
+										src={Peep11}
+									/>
 								</div>
 								<img
+									alt="illustration peep 34"
 									id="peep-34"
 									src={Peep34}
 									data-atropos-offset="-10"
@@ -53,7 +57,10 @@ export const HomeParallaxPart1: Component = () => {
 										left: `${props.progress * 600 + 400}px`,
 									}}
 								>
-									<img src={Peep12} />
+									<img
+										alt="illustration peep 12"
+										src={Peep12}
+									/>
 								</div>
 							</div>
 						</div>
