@@ -2,10 +2,12 @@ import { Component, createSignal } from "solid-js"
 import "~/styles/home.sass"
 import { Button } from "../ui/Button"
 import { HomeParallaxPart1 } from "./home/HomeParallaxPart1"
+import { ParallexPart2 } from "./home/ParallaxPart2"
 import { Hoverable } from "../decorative/cursor/Cursor"
 import { Dialog } from "../ui/Dialog"
 import { AGE, EMAIL, EMAIL_URL, GITHUB_URL, TWITTER_URL } from "~/config"
 import { FavouriteStacks } from "./home/FavouriteStacks"
+import { BesidesThis } from "./home/BesidesThis"
 
 export const IndexPage: Component = () => {
 	const [workWithMeOpen, setWorkWithMeOpen] = createSignal(false)
@@ -49,12 +51,12 @@ export const IndexPage: Component = () => {
 				</div>
 
 				<HomeParallaxPart1 />
+				<ParallexPart2 />
 
 				<FavouriteStacks />
 
-				<div id="thats-a-wrap">
-					<h1>That's a wrap!</h1>
-				</div>
+				<BesidesThis />
+
 				<div id="interested-about-me">
 					Interested about me?
 					<br /> Let's chat on Discord! My discord is{" "}
