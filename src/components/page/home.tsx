@@ -1,10 +1,13 @@
-import type { Component } from "solid-js"
+import { Component, createSignal } from "solid-js"
 import "~/styles/home.sass"
 import { Button } from "../ui/Button"
-import { HomeParallax } from "./HomeParallax"
+import { HomeParallaxPart1 } from "./HomeParallaxPart1"
 import { Hoverable } from "../decorative/cursor/Cursor"
+import { Dialog } from "../ui/Dialog"
+import { AGE } from "~/config"
 
 export const IndexPage: Component = () => {
+	const [workWithMeOpen, setWorkWithMeOpen] = createSignal(false)
 	return (
 		<>
 			<div id="home-hero">
@@ -15,13 +18,39 @@ export const IndexPage: Component = () => {
 				</h1>
 				<p id="home-hero-desc">
 					Hello! My name is Zihan Chen and I am both a designer and a
-					fullstack dev.
+					fullstack dev. I am also a {AGE}-year-old boy living in
+					Singapore.
 				</p>
 				<div id="home-hero-actions">
-					<Button id="work-with-me">Work with me</Button>
+					<Button
+						id="work-with-me"
+						onClick={() => setWorkWithMeOpen(true)}
+					>
+						Work with me
+					</Button>
+					<Dialog
+						open={workWithMeOpen()}
+						close={() => setWorkWithMeOpen(false)}
+						header={<h1>Work with me</h1>}
+						content={
+							<p id="wwm-contact-me">
+								You can contact me through email. My email
+								address is{" "}
+								<Hoverable>
+									<a href="mailto:zccmczh@gmail.com">
+										zccmczh@gmail.com
+									</a>
+								</Hoverable>
+								.
+							</p>
+						}
+					/>
+
 					<Button id="more-about-me">More about me</Button>
 				</div>
-				<HomeParallax />
+
+				<HomeParallaxPart1 />
+
 				<div id="thats-a-wrap">
 					<h1>That's a wrap!</h1>
 				</div>

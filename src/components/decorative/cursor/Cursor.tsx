@@ -50,6 +50,7 @@ export const Cursor: Component = () => {
 		}
 	}
 
+	const round = createMemo(() => hoveringEl()?.dataset?.round === "true")
 	const hoveringElX = createMemo(() => {
 		const hel = hoveringEl()
 		if (!hel) return null
@@ -61,12 +62,16 @@ export const Cursor: Component = () => {
 		const rect = hel.getBoundingClientRect()
 		return rect.top + rect.height / 2
 	})
+
 	const yString = createMemo(() => `${hoveringElY() ?? mouseY()}px`)
 	const xString = createMemo(() => `${hoveringElX() ?? mouseX()}px`)
+
 	const isHovering = createMemo(() => !!hoveringEl())
 	const width = createMemo(() =>
 		hoveringEl()?.dataset.shadow === "false"
 			? `0px`
+			: round()
+			? height()
 			: `${
 					hoveringEl()?.clientWidth
 						? (hoveringEl()?.clientWidth as any) * 1.3
@@ -82,9 +87,11 @@ export const Cursor: Component = () => {
 						: 20
 			  }px`
 	)
+
 	const transformStyle = createMemo(
 		() => `translate(${offsetX() * 1.3}px, ${offsetY() * 1.3}px)`
 	)
+
 	createEffect(() => {
 		const hoveringElement = hoveringEl()
 		const x = mouseX()
@@ -126,7 +133,12 @@ export const Cursor: Component = () => {
 					}}
 				>
 					<div id="cursor-content-wrap">
-						<div id="cursor-content"></div>
+						<div
+							id="cursor-content"
+							classList={{
+								round: round(),
+							}}
+						></div>
 					</div>
 				</div>
 				<div id="cursor-highlight"></div>
@@ -138,6 +150,7 @@ export const Cursor: Component = () => {
 export const Hoverable: Component<{
 	children: JSX.Element
 	shadow?: boolean
+	round?: boolean
 }> = (props) => {
 	let el: HTMLDivElement | null = null
 
@@ -159,6 +172,7 @@ export const Hoverable: Component<{
 			class="hoverable"
 			ref={el as unknown as HTMLDivElement}
 			data-shadow={`${props.shadow === undefined ? true : false}`}
+			data-round={`${props.round === undefined ? false : props.round}`}
 		>
 			{props.children}
 		</div>

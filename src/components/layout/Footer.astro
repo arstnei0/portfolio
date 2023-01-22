@@ -1,14 +1,21 @@
 ---
+import { Hoverable } from "../decorative/cursor/Cursor"
 ---
 
 <footer>
 	<div>Zihan Chen. <br />This site is open source at Github.</div>
 	<div>
-		<a target="_blank" href="https://github.com/zihan-ch">My Github</a>
+		<Hoverable client:idle>
+			<a target="_blank" href="https://github.com/zihan-ch">My Github</a>
+		</Hoverable>
 		<br />
-		<a target="_blank" href="https://twitter.com/zihanch">My Twitter</a>
+		<Hoverable client:idle>
+			<a target="_blank" href="https://twitter.com/zihanch">My Twitter</a>
+		</Hoverable>
 		<br />
-		<a target="_blank" href="mailto:zccmczh@gmail.com">My Email</a>
+		<Hoverable client:idle>
+			<a target="_blank" href="mailto:zccmczh@gmail.com">My Email</a>
+		</Hoverable>
 		<br />
 	</div>
 </footer>

@@ -19,6 +19,29 @@ const { title } = Astro.props
 		<link rel="icon" href="/avatar.webp" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+
+		<script is:inline>
+			const mode1 = localStorage.getItem("m")
+			if (!mode1) localStorage.setItem("m", "s")
+
+			const mode = mode1 ?? localStorage.getItem("m")
+			let modeClassName
+
+			if (mode === "s")
+				modeClassName =
+					globalThis.matchMedia &&
+					globalThis.matchMedia("(prefers-color-scheme: dark)")
+						.matches
+						? "d"
+						: "l"
+			else if (mode === "d") modeClassName = "d"
+			else modeClassName = "l"
+
+			modeClassName &&
+				document.documentElement.classList.add(modeClassName)
+
+			globalThis.m = mode
+		</script>
 	</head>
 	<body>
 		<Header />

@@ -1,4 +1,5 @@
 #custom-cursor {
+	z-index: 1000;
 	position: fixed;
 	pointer-events: none;
 }
@@ -15,6 +16,7 @@
 
 #cursor-content {
 	width: 100%;
+	z-index: 1000;
 	height: 100%;
 	border-radius: 10px;
 	background-color: #989898;
@@ -23,6 +25,10 @@
 	transition: opacity 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
 		height 0.2s cubic-bezier(0.215, 0.61, 0.355, 1),
 		width 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#cursor-content.round {
+	border-radius: 50%;
 }
 
 #cursor-content-wrap {

@@ -1,0 +1,48 @@
+@import "../../../styles/global.sass";
+
+body:has(.dialog) {
+   height: 100%;
+   overflow-y: hidden;
+}
+
+.dialog-root {
+    position: fixed;
+    z-index: 100;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+.dialog-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog {
+    background-color: $bg-color;
+    border-radius: $border-radius;
+    padding: 1rem;
+    padding-bottom: 1.2rem;
+    min-width: 40%;
+}
+
+.d .dialog {
+	box-shadow: 0px 11px 15px -7px rgba(255, 255, 255, 0.121),
+    0px 24px 38px 3px rgba(255, 255, 255, 0.055), 0px 9px 46px 8px rgba(255, 255, 255, 0.034);
+}
+
+.l .dialog {
+	box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.121),
+    0px 24px 38px 3px rgba(0, 0, 0, 0.055), 0px 9px 46px 8px rgba(0, 0, 0, 0.034);
+}
+
+.dialog > * {
+    margin: .2rem;
+}
+
+.dialog {
+    animation: dropin .5s ease;
+}

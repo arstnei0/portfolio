@@ -1,14 +1,18 @@
 ---
 import { SITE_URL } from "~/config"
 import A from "../primitive/A.astro"
+import { ThemeToggleButton } from "../functional/ThemeToggleButton"
+import { Hoverable } from "../decorative/cursor/Cursor"
 ---
 
 <header>
 	<div>
 		<div id="avatar">
-			<A href={SITE_URL}>
-				<img src="/avatar.webp" width="30" height="30" />
-			</A>
+			<Hoverable round client:idle>
+				<a href={SITE_URL}>
+					<img src="/avatar.webp" width="30" height="30" />
+				</a>
+			</Hoverable>
 		</div>
 		<div id="title-of-website">
 			<A href={SITE_URL}>Zihan Chen</A>
@@ -21,6 +25,7 @@ import A from "../primitive/A.astro"
 		<div id="twitter-link">
 			<A target="_blank" href="https://twitter.com/zihanch">Twitter</A>
 		</div>
+		<div id="theme-toggle"><ThemeToggleButton client:idle /></div>
 	</div>
 </header>
 
@@ -42,7 +47,7 @@ import A from "../primitive/A.astro"
 			display: flex
 
 			& > *
-				$margin: .5em
+				$margin: .8em
 				margin-left: $margin
 				margin-right: $margin
 
