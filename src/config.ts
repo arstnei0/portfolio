@@ -7,3 +7,7 @@ function calculateData(dob: Date) {
 
 export const SITE_URL = `https://zihanchen.vercel.app`
 export const AGE = calculateData(new Date(2009, 3, 1))
+export const GITHUB_URL = `https://github.com/zihan-ch`
+export const TWITTER_URL = `https://twitter.com/zihanch`
+export const EMAIL = `zccmczh@gmail.com`
+export const EMAIL_URL = `mailto:${EMAIL}`

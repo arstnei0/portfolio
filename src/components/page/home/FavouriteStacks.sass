@@ -1,0 +1,49 @@
+@import "../../../styles/global"
+
+#favourite-stacks
+    margin: auto
+    margin-top: 10em
+
+    & > h1
+        font-family: $mono
+        font-size: 3em
+
+.swiper
+    width: 400px
+    height: 500px
+
+.swiper-slide
+    width: 100%
+    border-radius: $border-radius-l
+    height: 100%
+    transition: background-color .3 ease
+    background-color: $bg-color
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+
+    & > h1
+        font-size: 3em
+        background: linear-gradient(90deg, #c5f9d7, #f7d486, #f27a7d)
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+.swiper-pagination
+    --swiper-pagination-bullet-width: 40px
+    --swiper-pagination-bullet-height: 8px
+    // --swiper-theme-color: $primary-color
+
+.swiper-pagination-bullet
+    border-radius: 5px !important
+
+.swiper-pagination-bullet-active
+    background-color: $primary-color !important
+
+.swiper-pagination-bullet:not(.swiper-pagination-bullet-active)
+    background-color: $bg-color-lighter
+
+.slide-inner
+    margin: 2em
+
+    & a
+        color: $font-color-title
+        font-size: 1.5em
+        font-family: $mono

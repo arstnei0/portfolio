@@ -1,10 +1,11 @@
 import { Component, createSignal } from "solid-js"
 import "~/styles/home.sass"
 import { Button } from "../ui/Button"
-import { HomeParallaxPart1 } from "./HomeParallaxPart1"
+import { HomeParallaxPart1 } from "./home/HomeParallaxPart1"
 import { Hoverable } from "../decorative/cursor/Cursor"
 import { Dialog } from "../ui/Dialog"
-import { AGE } from "~/config"
+import { AGE, EMAIL, EMAIL_URL, GITHUB_URL, TWITTER_URL } from "~/config"
+import { FavouriteStacks } from "./home/FavouriteStacks"
 
 export const IndexPage: Component = () => {
 	const [workWithMeOpen, setWorkWithMeOpen] = createSignal(false)
@@ -37,9 +38,7 @@ export const IndexPage: Component = () => {
 								You can contact me through email. My email
 								address is{" "}
 								<Hoverable>
-									<a href="mailto:zccmczh@gmail.com">
-										zccmczh@gmail.com
-									</a>
+									<a href={EMAIL_URL}>{EMAIL}</a>
 								</Hoverable>
 								.
 							</p>
@@ -51,6 +50,8 @@ export const IndexPage: Component = () => {
 
 				<HomeParallaxPart1 />
 
+				<FavouriteStacks />
+
 				<div id="thats-a-wrap">
 					<h1>That's a wrap!</h1>
 				</div>
@@ -60,13 +61,13 @@ export const IndexPage: Component = () => {
 					<strong>zihan#4186</strong>.<br />
 					I'm also mainly active on{" "}
 					<Hoverable>
-						<a target="_blank" href="https://twitter.com/zihanch">
+						<a target="_blank" href={GITHUB_URL}>
 							Twitter
 						</a>
 					</Hoverable>{" "}
 					and{" "}
 					<Hoverable>
-						<a target="_blank" href="https://github.com/zihan-ch">
+						<a target="_blank" href={TWITTER_URL}>
 							Github
 						</a>
 					</Hoverable>

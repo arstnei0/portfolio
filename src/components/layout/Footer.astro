@@ -1,4 +1,5 @@
 ---
+import { EMAIL_URL, GITHUB_URL, TWITTER_URL } from "~/config"
 import { Hoverable } from "../decorative/cursor/Cursor"
 ---
 
@@ -6,15 +7,15 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 	<div>Zihan Chen. <br />This site is open source at Github.</div>
 	<div>
 		<Hoverable client:idle>
-			<a target="_blank" href="https://github.com/zihan-ch">My Github</a>
+			<a target="_blank" href={GITHUB_URL}>My Github</a>
 		</Hoverable>
 		<br />
 		<Hoverable client:idle>
-			<a target="_blank" href="https://twitter.com/zihanch">My Twitter</a>
+			<a target="_blank" href={TWITTER_URL}>My Twitter</a>
 		</Hoverable>
 		<br />
 		<Hoverable client:idle>
-			<a target="_blank" href="mailto:zccmczh@gmail.com">My Email</a>
+			<a target="_blank" href={EMAIL_URL}>My Email</a>
 		</Hoverable>
 		<br />
 	</div>

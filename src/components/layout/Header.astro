@@ -1,5 +1,5 @@
 ---
-import { SITE_URL } from "~/config"
+import { GITHUB_URL, SITE_URL, TWITTER_URL } from "~/config"
 import A from "../primitive/A.astro"
 import { ThemeToggleButton } from "../functional/ThemeToggleButton"
 import { Hoverable } from "../decorative/cursor/Cursor"
@@ -20,10 +20,10 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 	</div>
 	<div>
 		<div id="github-link">
-			<A target="_blank" href="https://github.com/zihan-ch">Github</A>
+			<A target="_blank" href={GITHUB_URL}>Github</A>
 		</div>
 		<div id="twitter-link">
-			<A target="_blank" href="https://twitter.com/zihanch">Twitter</A>
+			<A target="_blank" href={TWITTER_URL}>Twitter</A>
 		</div>
 		<div id="theme-toggle"><ThemeToggleButton client:idle /></div>
 	</div>
@@ -52,7 +52,7 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 				margin-right: $margin
 
 		& *
-			color: $font-color-primary
+			color: $font-color-primary !important
 
 	#title-of-website
 		font-weight: 500
