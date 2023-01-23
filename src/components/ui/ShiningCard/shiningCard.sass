@@ -1,0 +1,46 @@
+.sc-wrap
+    position: relative
+
+.sc
+    display: flex
+    padding: 8px
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    border-radius: 11px
+    text-align: center
+    background-color: #151718
+    width: 100%
+    height: 100%
+
+.sc-bg
+    $thickness: -1.5px
+    position: absolute
+    left: $thickness
+    top: $thickness
+    right: $thickness
+    bottom: $thickness
+    z-index: -1
+    border-radius: 11px
+    background-image: linear-gradient(135deg,rgba(223,239,254,.22),rgba(223,239,254,.07))
+
+.sc-highlight
+    position: absolute
+    top: 0px
+    bottom: 0px
+    left: 0px
+    right: 0px
+    opacity: 0
+    transition-duration: 300ms
+    transition-timing-function: ease
+    transition-delay: 0s
+    transition-property: opacity
+    background-image: radial-gradient( 400px at var(--c-x) var(--c-y), rgba(255, 255, 255, 0.4), transparent )
+    border-radius: 10px
+    pointer-events: none
+    z-index: 100
+
+.sc-wrap:hover .sc-highlight
+    opacity: .1

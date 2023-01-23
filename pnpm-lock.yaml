@@ -5,6 +5,7 @@ specifiers:
   '@astrojs/solid-js': ^1.2.3
   '@divriots/jampack': ^0.6.2
   '@kobalte/core': ^0.4.0
+  '@solid-primitives/mouse': ^2.0.5
   '@solid-primitives/scroll': ^2.0.7
   astro: ^1.9.2
   atropos: ^1.0.2
@@ -17,6 +18,7 @@ dependencies:
   '@astrojs/solid-js': 1.2.3_solid-js@1.6.9
   '@divriots/jampack': 0.6.2
   '@kobalte/core': 0.4.0_solid-js@1.6.9
+  '@solid-primitives/mouse': 2.0.5_solid-js@1.6.9
   '@solid-primitives/scroll': 2.0.7_solid-js@1.6.9
   astro: 1.9.2_sass@1.57.1
   atropos: 1.0.2
@@ -630,6 +632,17 @@ packages:
 
   /@solid-primitives/media/2.0.5_solid-js@1.6.9:
     resolution: {integrity: sha512-Vln3P8wZEAgLK+et7Q85C2bD8SpEbQ0MZKdMA+VzB8p1PQ8mvgmbM03ZZjMjFyC54sr4p9SLoZkx9AJWYEC6Aw==}
+    peerDependencies:
+      solid-js: ^1.6.0
+    dependencies:
+      '@solid-primitives/event-listener': 2.2.5_solid-js@1.6.9
+      '@solid-primitives/rootless': 1.2.2_solid-js@1.6.9
+      '@solid-primitives/utils': 4.0.1_solid-js@1.6.9
+      solid-js: 1.6.9
+    dev: false
+
+  /@solid-primitives/mouse/2.0.5_solid-js@1.6.9:
+    resolution: {integrity: sha512-piRA4Dvdr3nTFEw9PZOf1crYqADtm9tATZaeDr2bhi/Vs3FebQIkXyq5Rr4O/EmDILCVBEpRsR0qbH0y/3eK3w==}
     peerDependencies:
       solid-js: ^1.6.0
     dependencies:

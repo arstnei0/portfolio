@@ -1,10 +1,16 @@
 ---
 import { EMAIL_URL, GITHUB_URL, TWITTER_URL } from "~/config"
 import { Hoverable } from "../decorative/cursor/Cursor"
+import A from "../primitive/A.astro"
 ---
 
 <footer>
-	<div>Zihan Chen. <br />This site is open source at Github.</div>
+	<div id="site-os">
+		Zihan Chen. <br />This site is open source at
+		<A href="https://github.com/zihan-ch/portfolio" target="_blank">
+			Github
+		</A>.
+	</div>
 	<div style="min-width: 100px;">
 		<Hoverable client:idle>
 			<a target="_blank" href={GITHUB_URL}>My Github</a>
@@ -35,6 +41,9 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 		display: flex
 		justify-content: space-between
 		align-items: center
+
+		& #site-os a
+			color: $font-color-accent
 
 		& *
 			color: $font-color-secondary

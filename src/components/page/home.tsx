@@ -11,6 +11,7 @@ import { BesidesThis } from "./home/BesidesThis"
 
 export const IndexPage: Component = () => {
 	const [workWithMeOpen, setWorkWithMeOpen] = createSignal(false)
+
 	return (
 		<>
 			<div id="home-hero">
@@ -46,8 +47,6 @@ export const IndexPage: Component = () => {
 							</p>
 						}
 					/>
-
-					<Button id="more-about-me">More about me</Button>
 				</div>
 
 				<HomeParallaxPart1 />
