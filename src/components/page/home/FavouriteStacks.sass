@@ -1,16 +1,21 @@
-@import "../../../styles/global"
+@import "../../../styles/imports"
 
 #favourite-stacks
     margin: auto
     margin-top: 50em
+
+    @include mob
 
     & > h1
         font-family: $mono
         font-size: 3em
 
 .swiper
-    width: 400px
-    height: 500px
+    @include desk
+        width: 400px
+        height: 500px
+    @include mob
+        padding: 20px
 
 .swiper-slide
     width: 100%
@@ -18,7 +23,10 @@
     height: 100%
     transition: background-color .3 ease
     background-color: $bg-color
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    @include desk
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
+    @include mob
+        box-shadow: rgba(255, 255, 255, 0.24) 0px 5px 10px
 
     & > h1
         font-size: 3em

@@ -7,7 +7,7 @@ import {
 	onMount,
 } from "solid-js"
 import { Portal } from "solid-js/web"
-import "./Cursor.css"
+import "./Cursor.scss"
 
 const OFFSET = 6
 

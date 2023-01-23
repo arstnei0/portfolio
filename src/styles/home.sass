@@ -1,10 +1,11 @@
-@import "./global"
+@import "./imports"
 
 #home-hero
-    $margin: 8em
-    margin-left: $margin
-    margin-right: $margin
-    margin-top: 5em
+    @include desk
+        $margin: 8em
+        margin-left: $margin
+        margin-right: $margin
+        margin-top: 5em
     text-align: center
 
     & #home-hero-text

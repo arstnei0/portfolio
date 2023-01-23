@@ -37,6 +37,9 @@ export const HomeParallaxPart1: Component = () => {
 									amazing
 								</div>
 								<div id="title-p3">effects</div>
+								<div id="title-p4" class="mob">
+									Try to drag this!
+								</div>
 
 								<div data-atropos-offset="-20" id="peep-11">
 									<img
@@ -54,7 +57,9 @@ export const HomeParallaxPart1: Component = () => {
 									data-atropos-offset="15"
 									id="peep-12"
 									style={{
-										left: `${props.progress * 600 + 400}px`,
+										right: `${
+											props.progress * 600 + 400
+										}px`,
 									}}
 								>
 									<img

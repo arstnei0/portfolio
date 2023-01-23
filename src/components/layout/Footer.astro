@@ -5,7 +5,7 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 
 <footer>
 	<div>Zihan Chen. <br />This site is open source at Github.</div>
-	<div>
+	<div style="min-width: 100px;">
 		<Hoverable client:idle>
 			<a target="_blank" href={GITHUB_URL}>My Github</a>
 		</Hoverable>
@@ -22,10 +22,16 @@ import { Hoverable } from "../decorative/cursor/Cursor"
 </footer>
 
 <style lang="sass">
-	@import "../../styles/global.sass"
+	@import "../../styles/imports.sass"
+
 	footer
-		margin: 4em
-		margin-top: 10em
+		@include desk
+			margin: 4em
+			margin-top: 10em
+		@include mob
+			margin: .5em
+			margin-top: 10em
+
 		display: flex
 		justify-content: space-between
 		align-items: center

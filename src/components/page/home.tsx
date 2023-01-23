@@ -63,13 +63,13 @@ export const IndexPage: Component = () => {
 					<strong>zihan#4186</strong>.<br />
 					I'm also mainly active on{" "}
 					<Hoverable>
-						<a target="_blank" href={GITHUB_URL}>
+						<a target="_blank" href={TWITTER_URL}>
 							Twitter
 						</a>
 					</Hoverable>{" "}
 					and{" "}
 					<Hoverable>
-						<a target="_blank" href={TWITTER_URL}>
+						<a target="_blank" href={GITHUB_URL}>
 							Github
 						</a>
 					</Hoverable>

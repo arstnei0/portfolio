@@ -5,37 +5,46 @@ import { ThemeToggleButton } from "../functional/ThemeToggleButton"
 import { Hoverable } from "../decorative/cursor/Cursor"
 ---
 
-<header>
-	<div>
-		<div id="avatar">
-			<Hoverable round client:idle>
-				<a href={SITE_URL} aria-label="My avatar">
-					<img src="/avatar.webp" width="30" height="30" />
-				</a>
-			</Hoverable>
+<div id="header-wrap">
+	<header>
+		<div>
+			<div id="avatar">
+				<Hoverable round client:idle>
+					<a href={SITE_URL} aria-label="My avatar">
+						<img
+							src="/avatar.webp"
+							width="30"
+							height="30"
+							alt="My avatar"
+						/>
+					</a>
+				</Hoverable>
+			</div>
+			<div id="title-of-website" class="desk">
+				<A href={SITE_URL}>Zihan Chen</A>
+			</div>
 		</div>
-		<div id="title-of-website">
-			<A href={SITE_URL}>Zihan Chen</A>
+		<div>
+			<div id="github-link">
+				<A target="_blank" href={GITHUB_URL}>Github</A>
+			</div>
+			<div id="twitter-link">
+				<A target="_blank" href={TWITTER_URL}>Twitter</A>
+			</div>
+			<div id="theme-toggle"><ThemeToggleButton client:idle /></div>
 		</div>
-	</div>
-	<div>
-		<div id="github-link">
-			<A target="_blank" href={GITHUB_URL}>Github</A>
-		</div>
-		<div id="twitter-link">
-			<A target="_blank" href={TWITTER_URL}>Twitter</A>
-		</div>
-		<div id="theme-toggle"><ThemeToggleButton client:idle /></div>
-	</div>
-</header>
+	</header>
+</div>
 
 <style lang="sass">
-	@import '../../styles/global.sass'
+	@import "../../styles/imports.sass"
+
+	#header-wrap
+		width: 100%
+		display: block
 
 	header
-		$margin-side: 1em
-		margin-left: $margin-side
-		margin-right: $margin-side
+		margin-left: 1em
 		margin-top: 0.1em
 		margin-bottom: 1em
 		display: flex

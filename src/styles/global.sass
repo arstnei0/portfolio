@@ -1,6 +1,5 @@
-@import "./color"
-@import "./font"
-@import "./var"
+@import "./theme"
+@import "./imports"
 @import "./utils"
 
 body
@@ -10,14 +9,17 @@ body
     color: $font-color-primary
     scroll-behavior: smooth
     overflow-x: hidden
+    overflow-y: scroll
+    transition: all .5s ease
 
 a
     text-decoration: none
     color: $font-color-accent
 
 main
-    margin: 3em
-    margin-top: 1em
+    @include desk
+        margin: 3em
+        margin-top: 1em
 
     & *
         animation: dropin .6s ease
@@ -30,3 +32,6 @@ main
     to
         transform: translateY(0px)
         opacity: 1
+
+*
+    box-sizing: border-box

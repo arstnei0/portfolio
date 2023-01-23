@@ -44,6 +44,12 @@ const { title } = Astro.props
 				document.documentElement.classList.add(modeClassName)
 
 			globalThis.m = mode
+
+			// is mobile
+			globalThis.isM = !!(
+				globalThis.matchMedia &&
+				globalThis.matchMedia(`(max-width: 700px)`).matches
+			)
 		</script>
 	</head>
 	<body>

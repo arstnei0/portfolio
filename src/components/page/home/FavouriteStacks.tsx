@@ -9,14 +9,14 @@ import AstroLogoDark from "~/assets/logo/astro-dark.svg"
 import SolidLogo from "~/assets/logo/solid.svg"
 import TRPCLogo from "~/assets/logo/trpc.svg"
 import PrismaLogo from "~/assets/logo/prisma.svg"
+import { isMobile } from "~/lib/isMobile"
 
 export const FavouriteStacks: Component = () => {
 	onMount(() => {
 		const swiper = new Swiper(".swiper", {
-			spaceBetween: 30,
-			modules: [Pagination, EffectCards],
+			spaceBetween: 16,
+			modules: [Pagination, ...(isMobile ? [] : [EffectCards])],
 
-			effect: "cards",
 			centeredSlides: true,
 
 			pagination: {
@@ -27,6 +27,7 @@ export const FavouriteStacks: Component = () => {
 				delay: 3000,
 				disableOnInteraction: false,
 			},
+			...(isMobile ? {} : { effect: "cards" }),
 		})
 	})
 

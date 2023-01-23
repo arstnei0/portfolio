@@ -1,0 +1,9 @@
+$screen-edge: 700px
+
+@mixin desk
+    @media (min-width: #{$screen-edge})
+        @content
+
+@mixin mob
+    @media (max-width: #{$screen-edge})
+        @content
