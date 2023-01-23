@@ -7,11 +7,13 @@ specifiers:
   '@kobalte/core': ^0.4.0
   '@solid-primitives/mouse': ^2.0.5
   '@solid-primitives/scroll': ^2.0.7
+  '@types/three': ^0.148.0
   astro: ^1.9.2
   atropos: ^1.0.2
   sass: ^1.57.1
   solid-js: ^1.6.9
   swiper: ^8.4.6
+  three: ^0.148.0
 
 dependencies:
   '@astrojs/sitemap': 1.0.0
@@ -25,6 +27,10 @@ dependencies:
   sass: 1.57.1
   solid-js: 1.6.9
   swiper: 8.4.6
+  three: 0.148.0
+
+devDependencies:
+  '@types/three': 0.148.0
 
 packages:
 
@@ -975,9 +981,19 @@ packages:
       table: 6.8.1
     dev: false
 
+  /@types/three/0.148.0:
+    resolution: {integrity: sha512-1GiErjt1pJMadO8EhaxNrtULzdn+f3BbM3YTukiiXBVeRvvx4CXc2rpYdEuEBU/ouCX7Rc95j1HoVG9kFQXQJw==}
+    dependencies:
+      '@types/webxr': 0.5.0
+    dev: true
+
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
     dev: false
+
+  /@types/webxr/0.5.0:
+    resolution: {integrity: sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==}
+    dev: true
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
@@ -4306,6 +4322,10 @@ packages:
       acorn: 8.8.1
       commander: 2.20.3
       source-map-support: 0.5.21
+    dev: false
+
+  /three/0.148.0:
+    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
     dev: false
 
   /tiny-glob/0.2.9:

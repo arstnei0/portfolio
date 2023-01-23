@@ -22,6 +22,10 @@
 		"atropos": "^1.0.2",
 		"sass": "^1.57.1",
 		"solid-js": "^1.6.9",
-		"swiper": "^8.4.6"
+		"swiper": "^8.4.6",
+		"three": "^0.148.0"
+	},
+	"devDependencies": {
+		"@types/three": "^0.148.0"
 	}
 }
