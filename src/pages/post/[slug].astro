@@ -21,7 +21,9 @@ const { Content } = content
 
 <Layout title={post.data.title}>
 	<article>
-		<h1 class="post-title">{post.data.title}</h1>
+		<a href="javascript:window.location.hash='title';scrollToThePos();">
+			<h1 id="title" class="post-title">{post.data.title}</h1>
+        </a>
 		<span class="post-date">{getDateString(post.data.date)}</span>
 		<p class="post-desc">{post.data.description}</p>
 
@@ -35,6 +37,7 @@ const { Content } = content
 	.post-title
 		font-size: 3em
 		font-family: $serif
+		color: $font-color-primary
 
 	article
 		margin: 4em

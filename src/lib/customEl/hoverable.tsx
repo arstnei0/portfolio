@@ -4,7 +4,7 @@ import { Hoverable } from "~/components/decorative/cursor/Cursor"
 const getBoolProp = (str: string | undefined) =>
 	str === undefined ? undefined : str !== "false"
 
-customElement(
+export default () => customElement(
 	"z-hoverable",
 	{ shadow: undefined, round: undefined },
 	($, _options) => {

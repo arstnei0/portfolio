@@ -14,9 +14,6 @@ export const ShiningCard: Component<{ children: JSX.Element }> = (props) => {
 	const [el, setEl] = createSignal<HTMLDivElement | undefined>(undefined)
 	const relativePos = createPositionToElement(el, () => mouse)
 	onMount(() => setEl(scEl))
-	createEffect(() => {
-		console.log(relativePos.x)
-	})
 
 	return (
 		<>

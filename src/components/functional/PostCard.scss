@@ -24,7 +24,7 @@
 .post-card-body {
 	padding-left: 1.2em;
 	padding-right: 1.2em;
-	padding-top: .7em;
+	padding-top: 0.7em;
 }
 
 @include desk {
@@ -37,9 +37,9 @@
 
 .post-title {
 	font-weight: 500;
-	margin: .1em;
-	padding: .2em;
-	transition: all .3s ease;
+	margin: 0.1em;
+	padding: 0.2em;
+	transition: all 0.3s ease;
 
 	& a {
 		color: $font-color-primary;
@@ -51,7 +51,7 @@
 }
 
 .post-date {
-	font-size: .9em;
+	font-size: 0.9em;
 	color: $font-color-secondary;
 }
 
