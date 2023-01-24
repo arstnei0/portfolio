@@ -4,9 +4,9 @@ import "./HomeParallexPart1.sass"
 import "atropos/css"
 import { Atropos } from "atropos"
 import { Hoverable } from "../../decorative/cursor/Cursor"
-import Peep11 from "~/assets/peep-11.png"
-import Peep34 from "~/assets/peep-34.png"
-import Peep12 from "~/assets/peep-12.png"
+import Peep11 from "~/assets/peep-11.svg"
+import Peep34 from "~/assets/peep-34.svg"
+import Peep12 from "~/assets/peep-12.svg"
 
 export const HomeParallaxPart1: Component = () => {
 	return ScrollProgress((props) => {

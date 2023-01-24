@@ -16,4 +16,9 @@ export default defineConfig({
 		}),
 	],
 	site: SITE_URL,
+	vite: {
+		build: {
+			sourcemap: true,
+		},
+	},
 })

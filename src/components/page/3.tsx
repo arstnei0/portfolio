@@ -21,7 +21,7 @@ export const Three: Component = () => {
 		 * Textures
 		 */
 		const textureLoader = new t.TextureLoader()
-		const matcapTexture = textureLoader.load("texture.png")
+		const matcapTexture = textureLoader.load("/texture.webp")
 
 		/**
 		 * Fonts
