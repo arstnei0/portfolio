@@ -1,0 +1,71 @@
+@import "style"
+
+article *
+    line-height: 1.6em
+    font-family: $sans
+
+article p,
+article li
+    font-size: 1.25em
+
+article h1
+    font-size: 2.3em
+
+article h2
+    font-size: 1.95em
+
+article h3
+    font-size: 1.75em
+
+article h4
+    font-size: 1.6em
+
+article h5
+    font-size: 1.4e
+
+article h6
+    font-size: 1.3e
+
+.astro-code
+    padding: 0.7em
+    border-radius: 1.4em
+    padding-left: 1.2em
+
+    & *
+        font-family: $mono !important
+
+blockquote
+    border-left: 0.4em solid rgb(88, 61, 42)
+    border-radius: 0.2em
+    padding-left: 1em
+    margin-left: 1em
+
+p code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code
+    $border-radius: 0.4em
+    $padding-block: 0.2em
+    $padding-inline: 0.5em
+    padding: $padding-block $padding-inline
+    margin: calc($padding-block) * -1 0
+    border-radius: .5em
+    word-break: break-word
+    background-color: $code-inline-bg-color
+
+table
+    $border-color: #cdcab2e8
+    border-radius: 0.5em
+    width: 100%
+
+td,
+th
+    padding: 0.4em
+    border-radius: .8em
+
+hr
+    margin-top: 3em
+    margin-bottom: 3em

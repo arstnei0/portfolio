@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content"
+import PostCard from "~/components/functional/PostCard.astro"
+import Layout from "~/layouts/Layout.astro"
+
+const posts = await getCollection("blog")
+---
+
+<Layout title="My blog posts">
+	<h1>My blog posts</h1>
+	<div id="posts">
+		{posts.map((post) => <PostCard post={post} />)}
+	</div>
+</Layout>
+
+<style lang="sass">
+	@import "style"
+	h1
+		font-family: $serif
+
+	#posts
+		margin-top: 3.5em
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		gap: 1em
+</style>

@@ -29,6 +29,7 @@ export const BesidesThis: Component = () => {
 									src={NeovimLogo}
 									alt="neovim logo"
 									height="70%"
+									loading="lazy"
 								/>
 							</div>
 							<h1>🎉 Neovim 🎉</h1>
@@ -41,6 +42,7 @@ export const BesidesThis: Component = () => {
 									src={SassLogo}
 									height="60%"
 									alt="sass logo"
+									loading="lazy"
 								/>
 							</div>
 							<h1>Sass</h1>
@@ -60,12 +62,14 @@ export const BesidesThis: Component = () => {
 									class="lonly"
 									height="70%"
 									alt="basketball light"
+									loading="lazy"
 								/>
 								<img
 									src={BasketballImgDark}
 									class="donly"
 									height="70%"
 									alt="basketball dark"
+									loading="lazy"
 								/>
 							</div>
 							<h1>🏀 Basketball 🏀</h1>
@@ -78,6 +82,7 @@ export const BesidesThis: Component = () => {
 									src={SpotifyLogo}
 									alt="spotify logo"
 									height="50%"
+									loading="lazy"
 								/>
 							</div>
 							<h1>🎧 Music 🎧</h1>

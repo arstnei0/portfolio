@@ -21,7 +21,7 @@ const { title } = Astro.props
 
 		<meta name="description" content="Zihan Chen's portfolio" />
 
-		<title>{title}</title>
+		<title>{title ? `${title} 🚀 Zihan` : "Zihan Chen"}</title>
 
 		<script is:inline>
 			const mode1 = localStorage.getItem("m")
@@ -75,5 +75,6 @@ const { title } = Astro.props
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "5fa179ef3d3c47979020976b5c72f345"}'
 		></script>
+		<script src="~/lib/hoverable.tsx"></script>
 	</body>
 </html>

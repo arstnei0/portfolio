@@ -20,5 +20,15 @@ export default defineConfig({
 		build: {
 			sourcemap: true,
 		},
+		resolve: {
+			alias: {
+				style: "/src/styles/imports.sass",
+			},
+		},
+	},
+	markdown: {
+		shikiConfig: {
+			theme: "dracula",
+		},
 	},
 })

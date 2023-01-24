@@ -1,0 +1,50 @@
+---
+import { getCollection, getEntryBySlug, CollectionEntry } from "astro:content"
+import { GetStaticPaths } from "astro"
+import Layout from "~/layouts/Layout.astro"
+import "~/styles/typography.sass"
+import { getDateString } from "~/lib/post"
+
+export const getStaticPaths: GetStaticPaths = async () => {
+	const posts = await getCollection("blog")
+
+	return posts.map((post) => ({
+		params: { slug: post.slug },
+	}))
+}
+
+const { slug } = Astro.params as { slug: CollectionEntry<"blog">["slug"] }
+const post = await getEntryBySlug("blog", slug)
+const content = await post.render()
+const { Content } = content
+---
+
+<Layout title={post.data.title}>
+	<article>
+		<h1 class="post-title">{post.data.title}</h1>
+		<z-hoverable shadow="false"><a href="/">Hello world</a></z-hoverable>
+		<span class="post-date">{getDateString(post.data.date)}</span>
+		<p class="post-desc">{post.data.description}</p>
+
+		<Content />
+	</article>
+</Layout>
+
+<style lang="sass">
+	@import "style"
+
+	.post-title
+		font-size: 3em
+		font-family: $serif
+
+	article
+		margin: 4em
+
+	.post-date
+		color: $font-color-secondary
+		font-size: 1em
+
+	.post-desc
+		color: $font-color-secondary
+		font-size: 1.1em
+</style>

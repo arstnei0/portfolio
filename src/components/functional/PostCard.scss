@@ -1,0 +1,60 @@
+@import "style";
+
+.post-card {
+	padding-bottom: 5px;
+	box-shadow: 15px 28px 25px -18px rgba(130, 129, 129, 0.2);
+	border-radius: 10px;
+	transition: all 450ms ease 0s;
+	background-color: $bg-color-light;
+}
+
+.post-card-image {
+	transition: all 1s ease-out;
+}
+
+.post-card:hover .post-card-image {
+	filter: hue-rotate(180deg) contrast(1.4);
+}
+
+.post-card:hover {
+	box-shadow: 2px 8px 8px -5px rgba(96, 92, 92, 0.3);
+	transform: translate3d(0, 2px, 0);
+}
+
+.post-card-body {
+	padding-left: 1.2em;
+	padding-right: 1.2em;
+	padding-top: .7em;
+}
+
+@include desk {
+	.post-info-1 {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.post-title {
+	font-weight: 500;
+	margin: .1em;
+	padding: .2em;
+	transition: all .3s ease;
+
+	& a {
+		color: $font-color-primary;
+	}
+
+	&:hover {
+		transform: scale(110%);
+	}
+}
+
+.post-date {
+	font-size: .9em;
+	color: $font-color-secondary;
+}
+
+.post-desc {
+	color: $font-color-secondary;
+}
