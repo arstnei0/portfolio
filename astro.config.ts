@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config"
 import solidJs from "@astrojs/solid-js"
 import sitemap from "@astrojs/sitemap"
 import { SITE_URL } from "./src/config"
+import { rehypePlugins } from "./src/lib/rehype"
 
 // https://astro.build/config
 import compress from "astro-compress"
@@ -30,5 +31,6 @@ export default defineConfig({
 		shikiConfig: {
 			theme: "dracula",
 		},
+		rehypePlugins: rehypePlugins,
 	},
 })

@@ -75,6 +75,11 @@ const { title } = Astro.props
 			src="https://static.cloudflareinsights.com/beacon.min.js"
 			data-cf-beacon='{"token": "5fa179ef3d3c47979020976b5c72f345"}'
 		></script>
-		<script src="~/lib/hoverable.tsx"></script>
+		<script src="~/lib/customElements.tsx"></script>
+
+        <script>
+            // ready
+            window.addEventListener('load', () => document.documentElement.classList.add('r'))
+        </script>
 	</body>
 </html>
