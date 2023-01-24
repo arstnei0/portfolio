@@ -157,12 +157,12 @@ export const Hoverable: Component<{
 	onMount(() => {
 		el?.addEventListener("mouseenter", (e) => {
 			// @ts-ignore
-			globalThis.cursorEnter(el)
+			globalThis.cursorEnter?.(el)
 		})
 
 		el?.addEventListener("mouseleave", (e) => {
 			// @ts-ignore
-			globalThis.cursorLeave()
+			globalThis.cursorLeave?.()
 			if (el) el.style.transform = `none`
 		})
 	})

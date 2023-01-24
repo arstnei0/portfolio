@@ -418,7 +418,7 @@ This enables nested loops.
 
 That's all! I wrote 184 lines of Rust code in total and practised a lot about both Rust and interpreters. BTW, Here's the Brainfuck code that outputs `Hello, I'm Zihan!`:
 
-```rust
+```
 H: >+++++[<++++++++++++++>-]<++.
 e: >>++++[>+++++<-]>[<+++++>-]<+.
 l: +++++++.

@@ -4,21 +4,26 @@ import { Hoverable } from "~/components/decorative/cursor/Cursor"
 const getBoolProp = (str: string | undefined) =>
 	str === undefined ? undefined : str !== "false"
 
-export default () => customElement(
-	"z-hoverable",
-	{ shadow: undefined, round: undefined },
-	($, _options) => {
-		return (
-			<>
-				<style>
-					.hoverable &#123; display: inline-block; transition: all
-					0.3s cubic-bezier(0.215, 0.61, 0.355, 1); color: var(--5);
-					&#125;
-				</style>
-				<Hoverable {...$}>
-					<slot />
-				</Hoverable>
-			</>
-		)
-	}
-)
+const style = `.hoverable {
+    display: inline-block;
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    color: var(--5);
+    padding-left: 1em;
+    padding-right: 1em;
+}`
+
+export default () =>
+	customElement(
+		"z-hoverable",
+		{ shadow: undefined, round: undefined },
+		($, _options) => {
+			return (
+				<>
+					<style>{style}</style>
+					<Hoverable {...$}>
+						<slot />
+					</Hoverable>
+				</>
+			)
+		}
+	)
