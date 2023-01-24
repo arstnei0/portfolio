@@ -17,7 +17,7 @@ export const BesidesThis: Component = () => {
 					<div id="rust">
 						<ShiningCard>
 							<div class="logo">
-								<img src={RustLogo} />
+								<img src={RustLogo} alt="rust logo" />
 							</div>
 							<h1>❤️ Rust ❤️</h1>
 						</ShiningCard>
@@ -25,7 +25,11 @@ export const BesidesThis: Component = () => {
 					<div id="neovim">
 						<ShiningCard>
 							<div class="logo">
-								<img src={NeovimLogo} height="70%" />
+								<img
+									src={NeovimLogo}
+									alt="neovim logo"
+									height="70%"
+								/>
 							</div>
 							<h1>🎉 Neovim 🎉</h1>
 						</ShiningCard>
@@ -33,7 +37,11 @@ export const BesidesThis: Component = () => {
 					<div id="sass">
 						<ShiningCard>
 							<div class="logo">
-								<img src={SassLogo} height="60%" />
+								<img
+									src={SassLogo}
+									height="60%"
+									alt="sass logo"
+								/>
 							</div>
 							<h1>Sass</h1>
 						</ShiningCard>
@@ -51,11 +59,13 @@ export const BesidesThis: Component = () => {
 									src={BasketballImgLight}
 									class="lonly"
 									height="70%"
+									alt="basketball light"
 								/>
 								<img
 									src={BasketballImgDark}
 									class="donly"
 									height="70%"
+									alt="basketball dark"
 								/>
 							</div>
 							<h1>🏀 Basketball 🏀</h1>
@@ -64,7 +74,11 @@ export const BesidesThis: Component = () => {
 					<div id="music">
 						<ShiningCard>
 							<div class="logo">
-								<img src={SpotifyLogo} height="50%" />
+								<img
+									src={SpotifyLogo}
+									alt="spotify logo"
+									height="50%"
+								/>
 							</div>
 							<h1>🎧 Music 🎧</h1>
 						</ShiningCard>
