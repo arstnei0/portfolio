@@ -4,7 +4,16 @@ import sitemap from "@astrojs/sitemap"
 import { SITE_URL } from "./src/config"
 
 // https://astro.build/config
+import compress from "astro-compress"
+
+// https://astro.build/config
 export default defineConfig({
-	integrations: [solidJs(), sitemap()],
+	integrations: [
+		solidJs(),
+		sitemap(),
+		compress({
+			css: false,
+		}),
+	],
 	site: SITE_URL,
 })
