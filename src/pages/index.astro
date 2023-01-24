@@ -6,6 +6,6 @@ import Layout from "../layouts/Layout.astro"
 
 <Layout title="Zihan Chen - The web designer and builder">
 	<IndexPage client:load>
-		<ThreeDEffect client:idle />
+		<ThreeDEffect client:media="(min-width: 700px)" />
 	</IndexPage>
 </Layout>

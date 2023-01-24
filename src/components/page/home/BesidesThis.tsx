@@ -4,7 +4,7 @@ import { ShiningCard } from "~/components/ui/ShiningCard"
 import RustLogo from "~/assets/logo/rust.svg"
 import NeovimLogo from "~/assets/logo/neovim.svg"
 import SassLogo from "~/assets/logo/sass.svg"
-import SpotifyLogo from "~/assets/logo/spotify.png"
+import SpotifyLogo from "~/assets/logo/spotify.webp"
 import BasketballImgLight from "~/assets/basketball-light.svg"
 import BasketballImgDark from "~/assets/basketball-dark.svg"
 
