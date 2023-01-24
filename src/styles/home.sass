@@ -8,6 +8,19 @@
         margin-top: 5em
     text-align: center
 
+    & #first
+        &:first-child
+            z-index: 10
+
+        & #three-d
+            // position: absolute
+            // top: 50%
+            // right: 0
+            // z-index: 1
+
+            @include mob
+                display: none
+
     & #home-hero-text
         font-weight: 400
         font-family: $serif

@@ -3,10 +3,10 @@ import * as t from "three"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
 import { FontLoader } from "three/examples/jsm/loaders/FontLoader.js"
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js"
-import "./3.sass"
+import "./3D.sass"
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
 
-export const Three: Component = () => {
+export const ThreeDEffect: Component = () => {
 	let canvas: HTMLCanvasElement = null as unknown as HTMLCanvasElement
 	const [text, setText] = createSignal<t.Mesh<
 		TextGeometry,
@@ -47,7 +47,6 @@ export const Three: Component = () => {
 			textGeometry.center()
 
 			const text = new t.Mesh(textGeometry, material)
-			text.position.set(0, -0.5, 0)
 			scene.add(text)
 
 			setText(text)
@@ -55,40 +54,13 @@ export const Three: Component = () => {
 
 		const loader = new GLTFLoader()
 
-		loader.load(
-			"/avatar.glb",
-			function (gltf) {
-				gltf.scene.position.set(0, 0.5, 0)
-				gltf.scene.scale.set(0.7, 0.7, 0.7)
-				scene.add(gltf.scene)
-			},
-			undefined,
-			function (error) {
-				console.error(error)
-			}
-		)
-
 		/**
 		 * Sizes
 		 */
 		const sizes = {
-			width: 900,
-			height: 500,
+			width: 750,
+			height: 300,
 		}
-
-		window.addEventListener("resize", () => {
-			// Update sizes
-			sizes.width = window.innerWidth
-			sizes.height = window.innerHeight
-
-			// Update camera
-			camera.aspect = sizes.width / sizes.height
-			camera.updateProjectionMatrix()
-
-			// Update renderer
-			renderer.setSize(sizes.width, sizes.height)
-			renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-		})
 
 		const light = new t.AmbientLight(0xfffff)
 		scene.add(light)
@@ -110,7 +82,7 @@ export const Three: Component = () => {
 		)
 		camera.position.x = 1
 		camera.position.y = 0
-		camera.position.z = 2
+		camera.position.z = 1.3
 		scene.add(camera)
 
 		// Controls
