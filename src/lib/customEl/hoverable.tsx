@@ -8,8 +8,8 @@ const style = `.hoverable {
     display: inline-block;
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
     color: var(--5);
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
 }`
 
 export default () =>

@@ -1,5 +1,11 @@
+import { CollectionEntry } from "astro:content"
 import dayjs from "dayjs"
 
 export const getUrlFromPostSlug = (slug: string) => `/post/${slug}`
 
 export const getDateString = (date: Date) => dayjs(date).format("D MMM, YYYY")
+
+export const sortPosts = (posts: CollectionEntry<"blog">[]) =>
+	posts.sort((a, b) =>
+		dayjs(a.data.date).isBefore(dayjs(b.data.date)) ? 1 : -1
+	)

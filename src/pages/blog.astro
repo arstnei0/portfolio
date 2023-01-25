@@ -2,8 +2,9 @@
 import { getCollection } from "astro:content"
 import PostCard from "~/components/functional/PostCard.astro"
 import Layout from "~/layouts/Layout.astro"
+import { sortPosts } from "~/lib/post"
 
-const posts = await getCollection("blog")
+const posts = sortPosts((await getCollection("blog")) as any)
 ---
 
 <Layout title="My blog posts">
@@ -15,12 +16,14 @@ const posts = await getCollection("blog")
 
 <style lang="sass">
 	@import "style"
+
 	h1
 		font-family: $serif
 
 	#posts
 		margin-top: 3.5em
-		display: grid
-		grid-template-columns: repeat(2, 1fr)
-		gap: 1em
+		@include desk
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			gap: 1em
 </style>

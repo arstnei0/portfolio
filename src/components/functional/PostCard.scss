@@ -8,6 +8,12 @@
 	background-color: $bg-color-light;
 }
 
+@include mob {
+	.post-card {
+		margin-top: 2em;
+	}
+}
+
 .post-card-image {
 	transition: all 1s ease-out;
 }

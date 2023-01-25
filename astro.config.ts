@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap"
 import compress from "astro-compress"
 import { SITE_URL } from "./src/config"
 import { rehypePlugins } from "./src/lib/rehype"
+import HEADING_STYLE from "./src/styles/heading.css?raw"
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +24,9 @@ export default defineConfig({
 			alias: {
 				style: "/src/styles/imports.sass",
 			},
+		},
+		define: {
+			HEADING_STYLE: `\`${HEADING_STYLE}\``,
 		},
 	},
 	markdown: {

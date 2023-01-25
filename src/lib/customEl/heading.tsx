@@ -1,44 +1,8 @@
 import { customElement } from "solid-element"
 import { Dynamic } from "solid-js/web"
-const style = `h1 {
-	font-size: 2.3em;
-}
-h2 {
-	font-size: 1.95em;
-}
-h3 {
-	font-size: 1.75em;
-}
-h4 {
-	font-size: 1.6em;
-}
-h5 {
-	font-size: 1.4em;
-}
-h6 {
-	font-size: 1.3em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: "Noto Rerif", serif;
-}
-.hw {
-	display: flex;
-	align-items: center;
-}
-.ha {
-	opacity: 0.2;
-	margin-left: 1em;
-	padding-top: 7px;
-	transition: opacity 0.3s ease;
-}
-.hw:hover .ha {
-	opacity: 1;
-}`
+
+// @ts-ignore
+const style = HEADING_STYLE
 
 const scroll = () =>
 	document

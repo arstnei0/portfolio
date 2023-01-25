@@ -3,7 +3,8 @@ import { getCollection, getEntryBySlug, CollectionEntry } from "astro:content"
 import { GetStaticPaths } from "astro"
 import Layout from "~/layouts/Layout.astro"
 import "~/styles/typography.sass"
-import { getDateString } from "~/lib/post"
+import { getDateString, sortPosts } from "~/lib/post"
+import Sidebar from "~/components/layout/Sidebar"
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getCollection("blog")
@@ -16,23 +17,30 @@ export const getStaticPaths: GetStaticPaths = async () => {
 const { slug } = Astro.params as { slug: CollectionEntry<"blog">["slug"] }
 const post = await getEntryBySlug("blog", slug)
 const content = await post.render()
-const { Content } = content
+const { Content, headings } = content
 ---
 
 <Layout title={post.data.title}>
-	<article>
-		<a href="javascript:window.location.hash='title';scrollToThePos();">
-			<h1 id="title" class="post-title">{post.data.title}</h1>
-        </a>
-		<span class="post-date">{getDateString(post.data.date)}</span>
-		<p class="post-desc">{post.data.description}</p>
+	<div id="article-wrap">
+		<article>
+			<a href="javascript:window.location.hash='title';scrollToThePos();">
+				<h1 id="title" class="post-title">{post.data.title}</h1>
+			</a>
+			<span class="post-date">{getDateString(post.data.date)}</span>
+			<p class="post-desc">{post.data.description}</p>
 
-		<Content />
-	</article>
+			<Content />
+		</article>
+
+		<Sidebar headings={headings} client:idle />
+	</div>
 </Layout>
 
 <style lang="sass">
 	@import "style"
+
+	#article-wrap
+		display: flex
 
 	.post-title
 		font-size: 3em
@@ -40,7 +48,11 @@ const { Content } = content
 		color: $font-color-primary
 
 	article
-		margin: 4em
+		width: 65%
+
+	@include desk
+		article
+			margin: 4em
 
 	.post-date
 		color: $font-color-secondary

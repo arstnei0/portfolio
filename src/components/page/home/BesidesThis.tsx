@@ -17,7 +17,11 @@ export const BesidesThis: Component = () => {
 					<div id="rust">
 						<ShiningCard>
 							<div class="logo">
-								<img src={RustLogo} alt="rust logo" />
+								<img
+									src={RustLogo}
+									alt="rust logo"
+									width="300px"
+								/>
 							</div>
 							<h1>❤️ Rust ❤️</h1>
 						</ShiningCard>
