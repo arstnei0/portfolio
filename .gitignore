@@ -19,5 +19,7 @@ pnpm-debug.log*
 .DS_Store
 
 .jampack
+.astro
+.vscode
 
 *.generated.*
