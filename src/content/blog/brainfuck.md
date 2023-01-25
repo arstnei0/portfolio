@@ -4,6 +4,7 @@ date: 01/24/23
 description: How I built a Brainfuck interpreter in Rust.
 tags:
     - rust
+    - interpreter
 ---
 
 When I got the idea of learning and writing interpreters is when I accidentally watched [the video](https://www.youtube.com/watch?v=hdHjjBS4cs8) from Fireship talking about a language called Brainf\*\*k. I highly recommend you to learn more about that! [This article](https://gist.github.com/roachhd/dce54bec8ba55fb17d3a) is also nice. It's just so fun...

@@ -51,6 +51,14 @@ export const IndexPage: Component<{ children: JSX.Element }> = (props) => {
 									</p>
 								}
 							/>
+							<Button
+								id="read-my-blog"
+								onClick={() =>
+									(window.location.pathname = "/blog")
+								}
+							>
+								Read my blog
+							</Button>
 						</div>
 					</div>
 					<div id="three-d">{props.children}</div>

@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content"
 import "./PostCard.scss"
 import { getDateString, getUrlFromPostSlug } from "~/lib/post"
+import Tags from "./Tags.astro"
 
 export interface Props {
 	post: CollectionEntry<"blog">
@@ -33,6 +34,9 @@ const date = getDateString(post.data.date)
 
 			<span class="post-date">{date}</span>
 		</div>
+
+		<Tags tags={post.data.tags} />
+
 		<p class="post-desc">{post.data.description}</p>
 	</div>
 </div>

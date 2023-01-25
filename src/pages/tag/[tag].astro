@@ -1,0 +1,38 @@
+---
+import { CollectionEntry, getCollection } from "astro:content"
+import PostCard from "~/components/functional/PostCard.astro"
+import Layout from "~/layouts/Layout.astro"
+import { sortPosts } from "~/lib/post"
+import type { GetStaticPaths } from "astro"
+import { getTags } from "~/lib/tags"
+
+export const getStaticPaths: GetStaticPaths = async (params) => {
+	const tags = getTags((await getCollection("blog")) as any)
+	return Object.keys(tags).map((tag) => ({ params: { tag } }))
+}
+
+const { tag = "" } = Astro.params
+
+const posts = sortPosts(getTags((await getCollection("blog")) as any)[tag])
+---
+
+<Layout title="Blog posts filtered">
+	<h1>My blog posts that have the tag "{tag}"</h1>
+	<div id="posts">
+		{posts.map((post) => <PostCard post={post} />)}
+	</div>
+</Layout>
+
+<style lang="sass">
+	@import "style"
+
+	h1
+		font-family: $serif
+
+	#posts
+		margin-top: 3.5em
+		@include desk
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			gap: 1em
+</style>

@@ -5,6 +5,7 @@ import Layout from "~/layouts/Layout.astro"
 import "~/styles/typography.sass"
 import { getDateString, sortPosts } from "~/lib/post"
 import Sidebar from "~/components/layout/Sidebar"
+import Tags from "~/components/functional/Tags.astro"
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getCollection("blog")
@@ -26,17 +27,18 @@ const { Content, headings } = content
 			<a href="javascript:window.location.hash='title';scrollToThePos();">
 				<h1 id="title" class="post-title">{post.data.title}</h1>
 			</a>
+			<Tags tags={post.data.tags} /><br />
 			<span class="post-date">{getDateString(post.data.date)}</span>
 			<p class="post-desc">{post.data.description}</p>
 
 			<Content />
 		</article>
 
-		<Sidebar headings={headings} client:idle />
+		<Sidebar headings={headings} client:media="(min-width: 700px)" />
 	</div>
 </Layout>
 
-<style lang="sass">
+<style lang="sass" is:global>
 	@import "style"
 
 	#article-wrap
@@ -47,8 +49,9 @@ const { Content, headings } = content
 		font-family: $serif
 		color: $font-color-primary
 
-	article
-		width: 65%
+	@include desk
+		article
+			width: 65%
 
 	@include desk
 		article

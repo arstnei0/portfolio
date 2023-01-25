@@ -13,12 +13,12 @@
 	},
 	"dependencies": {
 		"@astrojs/sitemap": "^1.0.0",
-		"@astrojs/solid-js": "^1.2.3",
-		"@divriots/jampack": "^0.6.2",
+		"@astrojs/solid-js": "^2.0.0",
+		"@divriots/jampack": "^0.7.2",
 		"@kobalte/core": "^0.4.0",
 		"@solid-primitives/mouse": "^2.0.5",
 		"@solid-primitives/scroll": "^2.0.7",
-		"astro": "2.0.0-beta.4",
+		"astro": "2.0.1",
 		"astro-compress": "^1.1.28",
 		"atropos": "^1.0.2",
 		"dayjs": "^1.11.7",
@@ -34,6 +34,6 @@
 		"zod": "^3.20.2"
 	},
 	"devDependencies": {
-		"@types/three": "^0.148.0"
+		"@types/three": "^0.148.1"
 	}
 }

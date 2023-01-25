@@ -1,0 +1,32 @@
+---
+export interface Props {
+	tags: string[]
+}
+
+const { tags } = Astro.props
+---
+
+<div class="tags">
+	{
+		tags.map((tag) => (
+			<a href={`/tag/${tag}`} class="tag">
+				{tag}
+			</a>
+		))
+	}
+</div>
+
+<style lang="sass" is:global>
+	@import "style"
+
+	.tag
+		padding: .5em
+		margin: 2px
+		opacity: .8
+		transition: all .3s ease
+		border-radius: .4em
+
+		&:hover
+			opacity: 1
+			background-color: $bg-color-lighter
+</style>
