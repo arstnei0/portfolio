@@ -1,0 +1,67 @@
+@import "style";
+
+#show-grid {
+    display: grid;
+    width: 100%;
+    height: 90vh;
+    margin: 3em;
+    gap: 1em;
+    grid-template:
+        ". a a a a . . . ."
+        ". a a a a . . . ."
+        ". a a a a b b b ."
+        "c c c c c b b b ."
+        "c c c c c b b b ."
+        "c c c c c b b b ."
+        ". g g h h b b b ."
+        ". g g h h . . . ."
+        ". . . h h . . . .";
+
+    & #lighthouse {
+        grid-area: a;
+
+        & img {
+            min-width: 100%;
+        }
+    }
+
+    & #rocket {
+        grid-area: c;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & #responsive {
+        grid-area: b;
+
+        & img {
+            height: 100%;
+        }
+    }
+
+    & #dark-mode {
+        grid-area: h;
+    }
+
+    & #ux {
+        grid-area: g;
+    }
+
+    &>* {
+        overflow: hidden;
+        background-color: $bg-color-light;
+        border-radius: 1em;
+        transition: all .3s ease;
+
+        &:hover {
+            opacity: .8;
+        }
+    }
+
+    & img {
+        display: block;
+        max-width: 100%;
+        position: static !important;
+    }
+}

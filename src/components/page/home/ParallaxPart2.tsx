@@ -1,7 +1,15 @@
-import type { Component } from "solid-js"
+import {
+	Component,
+	createComputed,
+	createEffect,
+	createMemo,
+	onMount,
+} from "solid-js"
 import { ScrollProgress } from "~/lib/parallex"
 import "./ParallaxPart2.sass"
-import RocketImg from "~/assets/rocket.svg"
+import RocketImg from "~/assets/rocket.png"
+import LighthouseImg from "~/assets/lighthouse.png"
+import ResponsiveImg from "~/assets/responsive.png"
 import { isMobile } from "~/lib/isMobile"
 
 const ROCKET_SPEED = isMobile ? 500 : 700
@@ -9,53 +17,49 @@ const ROCKET_OFFSET = isMobile ? -300 : 0
 
 export const ParallexPart2: Component = () => {
 	return ScrollProgress((props) => {
+		const rotate = createMemo(() => `rotate(${props.progress * 50}deg)`)
+		const scale = createMemo(() => `scale(${props.progress * 0.6 + 1})`)
+		const transform = createMemo(() => `${scale()} ${rotate()}`)
+		const display = createMemo(() => props.progress >= -3)
+
 		return (
 			<>
-				<div id="speed-matterss">
-					<h1>Speed Matters</h1>
-					<p
+				<div id="speed-matters-wrap">
+					<div
+						id="speed-matterss"
 						style={{
-							opacity: props.progress + 1,
+							transform: transform(),
+							display: display() ? "block" : "none",
 						}}
 					>
-						Nobody likes slow websites.
-						<br /> I use performant tools to build fast and safe
-						websites.
-					</p>
-					<p
-						style={{
-							opacity: props.progress + 0.7,
-						}}
-					>
-						Speed doesn't just mean performance.
-						<br /> The time needed to build an entire website is
-						also essential.
-						<br />
-						<span
-							style={{
-								opacity: props.progress + 0.4,
-							}}
-						>
-							I build websites fast along with existing nice
-							libraries without breaking anything.
-						</span>
-					</p>
-					<h2>
-						Within a short period, a nice and performant website
-						will be freshly baked!
-					</h2>
-					<img
-						id="rocket"
-						src={RocketImg}
-						width={300}
-						height={200}
-						style={{
-							left: `${
-								props.progress * ROCKET_SPEED + ROCKET_OFFSET
-							}px`,
-						}}
-						alt="rocket"
-					/>
+						<div id="show-grid">
+							<div id="lighthouse">
+								<img
+									src={LighthouseImg}
+									alt="lighthouse image"
+								></img>
+							</div>
+
+							<div id="rocket">
+								<img src={RocketImg} alt="rocket image"></img>
+							</div>
+
+							<div id="responsive">
+								<img
+									src={ResponsiveImg}
+									alt="responsive web design image"
+								/>
+							</div>
+
+							<div id="dark-mode">
+								<h2>Clean code</h2>
+							</div>
+
+							<div id="ux">
+								<h1>UX</h1>
+							</div>
+						</div>
+					</div>
 				</div>
 			</>
 		)
