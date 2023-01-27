@@ -7,9 +7,9 @@ import {
 } from "solid-js"
 import { ScrollProgress } from "~/lib/parallex"
 import "./ParallaxPart2.sass"
-import RocketImg from "~/assets/rocket.png"
-import LighthouseImg from "~/assets/lighthouse.png"
-import ResponsiveImg from "~/assets/responsive.png"
+import RocketImg from "~/assets/rocket.webp"
+import LighthouseImg from "~/assets/lighthouse.webp"
+import ResponsiveImg from "~/assets/responsive.webp"
 import { isMobile } from "~/lib/isMobile"
 
 const ROCKET_SPEED = isMobile ? 500 : 700
