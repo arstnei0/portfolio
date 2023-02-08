@@ -9,7 +9,7 @@ import {
 import { Portal } from "solid-js/web"
 import "./Cursor.scss"
 
-const OFFSET = 6
+const OFFSET = 7
 
 export const Cursor: Component = () => {
 	const [hoveringEl, setHoveringEl] = createSignal<HTMLDivElement | null>(
@@ -54,7 +54,13 @@ export const Cursor: Component = () => {
 	const hoveringElX = createMemo(() => {
 		const hel = hoveringEl()
 		if (!hel) return null
-		return hel?.offsetLeft + hel.offsetWidth / 2
+		let left = 0
+		let element = hel
+		do {
+			left += element.offsetLeft || 0
+			element = element.offsetParent as any
+		} while (element)
+		return left + hel.offsetWidth / 2
 	})
 	const hoveringElY = createMemo(() => {
 		const hel = hoveringEl()
@@ -98,12 +104,14 @@ export const Cursor: Component = () => {
 		const y = mouseY()
 		if (hoveringElement) {
 			const rect = hoveringElement.getBoundingClientRect()
+			let left = 0
+			let element = hoveringElement
+			do {
+				left += element.offsetLeft || 0
+				element = element.offsetParent as any
+			} while (element)
 			setOffsetX(
-				() =>
-					(x -
-						hoveringElement.offsetLeft -
-						hoveringElement.offsetWidth / 2) /
-					OFFSET
+				() => (x - left - hoveringElement.offsetWidth / 2) / OFFSET
 			)
 			setOffsetY(() => (y - rect.top - rect.height / 2) / OFFSET)
 		}
@@ -171,7 +179,7 @@ export const Hoverable: Component<{
 		<div
 			class="hoverable"
 			ref={el as unknown as HTMLDivElement}
-			data-shadow={`${props.shadow === undefined ? true : false}`}
+			data-shadow={`${props.shadow === undefined ? true : props.shadow}`}
 			data-round={`${props.round === undefined ? false : props.round}`}
 		>
 			{props.children}

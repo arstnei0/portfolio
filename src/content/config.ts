@@ -13,6 +13,7 @@ const blogCollection = defineCollection({
 				alt: z.string().default("Blog post cover image"),
 			})
 			.optional(),
+		draft: z.boolean().default(false),
 	}),
 })
 

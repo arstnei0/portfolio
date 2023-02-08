@@ -2,6 +2,7 @@
 title: A reactive functional language
 date: 04/02/2023
 description: Imagining a new reactive functional language.
+tags: [language, reactivity]
 ---
 
 JSX/TSX is nice. But when I am using them, I found it bothering to write these things all the time:

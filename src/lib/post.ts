@@ -9,3 +9,6 @@ export const sortPosts = (posts: CollectionEntry<"blog">[]) =>
 	posts.sort((a, b) =>
 		dayjs(a.data.date).isBefore(dayjs(b.data.date)) ? 1 : -1
 	)
+
+export const filterPosts = (posts: CollectionEntry<"blog">[]) =>
+	import.meta.env.DEV ? posts : posts.filter((post) => !post.data.draft)

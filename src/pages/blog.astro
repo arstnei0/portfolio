@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content"
 import PostCard from "~/components/functional/PostCard.astro"
 import Layout from "~/layouts/Layout.astro"
-import { sortPosts } from "~/lib/post"
+import { filterPosts, sortPosts } from "~/lib/post"
 
-const posts = sortPosts((await getCollection("blog")) as any)
+const posts = filterPosts(sortPosts((await getCollection("blog")) as any))
 ---
 
 <Layout title="My blog posts">
