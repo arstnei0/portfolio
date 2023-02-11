@@ -17,6 +17,22 @@ const blogCollection = defineCollection({
 	}),
 })
 
+const weeklyCollection = defineCollection({
+	schema: z.object({
+		title: z.string(),
+		date: z.coerce.date(),
+		image: z
+			.object({
+				src: z.string(),
+				alt: z.string().default("Blog post cover image"),
+			})
+			.optional(),
+		draft: z.boolean().default(false),
+		number: z.number(),
+	}),
+})
+
 export const collections = {
 	blog: blogCollection,
+	weekly: weeklyCollection,
 }

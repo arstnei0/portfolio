@@ -3,21 +3,20 @@ import { getCollection, getEntryBySlug, CollectionEntry } from "astro:content"
 import { GetStaticPaths } from "astro"
 import Layout from "~/layouts/Layout.astro"
 import "~/styles/typography.sass"
-import { sortPosts } from "~/lib/post"
 import Sidebar from "~/components/layout/Sidebar"
 import Tags from "~/components/functional/Tags.astro"
 import { getDateString } from "~/lib/date"
 
 export const getStaticPaths: GetStaticPaths = async () => {
-	const posts = await getCollection("blog")
+	const posts = await getCollection("weekly")
 
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 	}))
 }
 
-const { slug } = Astro.params as { slug: CollectionEntry<"blog">["slug"] }
-const post = await getEntryBySlug("blog", slug)
+const { slug } = Astro.params as { slug: CollectionEntry<"weekly">["slug"] }
+const post = await getEntryBySlug("weekly", slug)
 const content = await post.render()
 const { Content, headings } = content
 ---
@@ -35,13 +34,12 @@ const { Content, headings } = content
 					</div>
 				)
 			}
-
 			<a href="javascript:window.location.hash='title';scrollToThePos();">
-				<h1 id="title" class="post-title">{post.data.title}</h1>
+				<h1 id="title" class="post-title">
+					Zihan Weekly {post.slug}: {post.data.title}
+				</h1>
 			</a>
-			<Tags tags={post.data.tags} /><br />
 			<span class="post-date">{getDateString(post.data.date)}</span>
-			<p class="post-desc">{post.data.description}</p>
 
 			<Content />
 		</article>
@@ -67,13 +65,13 @@ const { Content, headings } = content
 
 	@include desk
 		article
-			margin: 4e
+			margin: 4em
 
 	.post-image
 		transition: all 1s ease
 		img
 			width: 100%
-			border-radius: $border-radiusm
+			border-radius: $border-radius
 
 	.post-image:hover
 		filter: hue-rotate(180deg) contrast(1.4)

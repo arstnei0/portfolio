@@ -1,12 +1,12 @@
 import { CollectionEntry } from "astro:content"
 import dayjs from "dayjs"
 
-export const getUrlFromPostSlug = (slug: string) => `/post/${slug}`
+export const getUrlFromWeeklySlug = (slug: string) => `/weekly/${slug}`
 
-export const sortPosts = (posts: CollectionEntry<"blog">[]) =>
+export const sortWeekly = (posts: CollectionEntry<"weekly">[]) =>
 	posts.sort((a, b) =>
 		dayjs(a.data.date).isBefore(dayjs(b.data.date)) ? 1 : -1
 	)
 
-export const filterPosts = (posts: CollectionEntry<"blog">[]) =>
+export const filterWeekly = (posts: CollectionEntry<"weekly">[]) =>
 	import.meta.env.DEV ? posts : posts.filter((post) => !post.data.draft)

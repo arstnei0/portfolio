@@ -13,6 +13,7 @@
 		"format": "prettier -w . --plugin-search-dir ."
 	},
 	"dependencies": {
+		"@astrojs/rss": "^2.1.0",
 		"@astrojs/sitemap": "^1.0.1",
 		"@astrojs/solid-js": "^2.0.2",
 		"@divriots/jampack": "^0.8.1",

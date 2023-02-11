@@ -1,8 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content"
 import "./PostCard.scss"
-import { getDateString, getUrlFromPostSlug } from "~/lib/post"
+import { getUrlFromPostSlug } from "~/lib/post"
 import Tags from "./Tags.astro"
+import { getDateString } from "~/lib/date"
 
 export interface Props {
 	post: CollectionEntry<"blog">

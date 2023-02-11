@@ -16,6 +16,11 @@
 
 .post-card-image {
 	transition: all 1s ease-out;
+
+	& img {
+		width: 100%;
+		border-radius: $border-radius $border-radius 0 0;
+	}
 }
 
 .post-card:hover .post-card-image {
@@ -31,6 +36,11 @@
 	padding-left: 1.2em;
 	padding-right: 1.2em;
 	padding-top: 0.7em;
+}
+
+.post-number {
+	font-family: $serif;
+	padding-right: .5em;
 }
 
 @include desk {

@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/rss': ^2.1.0
   '@astrojs/sitemap': ^1.0.1
   '@astrojs/solid-js': ^2.0.2
   '@divriots/jampack': ^0.8.1
@@ -24,6 +25,7 @@ specifiers:
   zod: ^3.20.2
 
 dependencies:
+  '@astrojs/rss': 2.1.0
   '@astrojs/sitemap': 1.0.1
   '@astrojs/solid-js': 2.0.2_solid-js@1.6.10
   '@divriots/jampack': 0.8.1
@@ -112,6 +114,13 @@ packages:
     engines: {node: '>=16.12.0'}
     dependencies:
       prismjs: 1.29.0
+    dev: false
+
+  /@astrojs/rss/2.1.0:
+    resolution: {integrity: sha512-PrqtIDDAyu4MyIvhBZEQhftui5fqyO9JPvOe4QnVDhErMIYWXd0pVPpqdnE0SKZ5xykMkphYPAQdWDr7VeCzBg==}
+    dependencies:
+      fast-xml-parser: 4.1.1
+      kleur: 4.1.5
     dev: false
 
   /@astrojs/sitemap/1.0.1:
@@ -2043,6 +2052,13 @@ packages:
       micromatch: 4.0.5
     dev: false
 
+  /fast-xml-parser/4.1.1:
+    resolution: {integrity: sha512-4gAP5PvNyrqePBOIIcpaEeE+nKBry1n6qTQiJsE59sLP0OC+YwhU7/XVmLLEMexbiluFQX1yEYm82Pk9B7xEiw==}
+    hasBin: true
+    dependencies:
+      strnum: 1.0.5
+    dev: false
+
   /fastq/1.15.0:
     resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
     dependencies:
@@ -3945,6 +3961,10 @@ packages:
   /strip-json-comments/2.0.1:
     resolution: {integrity: sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /strnum/1.0.5:
+    resolution: {integrity: sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==}
     dev: false
 
   /strtok3/7.0.0:

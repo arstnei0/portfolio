@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from "astro:content"
+import "./PostCard.scss"
+import { getDateString } from "~/lib/date"
+import { getUrlFromWeeklySlug } from "~/lib/weekly"
+
+export interface Props {
+	weekly: CollectionEntry<"weekly">
+}
+
+const { weekly } = Astro.props
+const date = getDateString(weekly.data.date)
+---
+
+<div class="post-card">
+	{
+		weekly.data.image && weekly.data.image.src && (
+			<div class="post-card-image">
+				<img
+					src={weekly.data.image ? weekly.data.image.src : ""}
+					alt={weekly.data.image?.alt}
+				/>
+			</div>
+		)
+	}
+
+	<div class="post-card-body">
+		<div class="post-info-1">
+			<h1 class="post-title">
+				<a href={getUrlFromWeeklySlug(weekly.slug)}>
+					<span class="post-number">{weekly.slug}</span>
+					{weekly.data.title}
+				</a>
+			</h1>
+
+			<span class="post-date">{date}</span>
+		</div>
+	</div>
+</div>

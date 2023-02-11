@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content"
+import PostCard from "~/components/functional/PostCard.astro"
+import WeeklyCard from "~/components/functional/WeeklyCard.astro"
+import A from "~/components/primitive/A.astro"
+import Layout from "~/layouts/Layout.astro"
+import { sortWeekly } from "~/lib/weekly"
+
+const posts = sortWeekly(sortWeekly((await getCollection("weekly")) as any))
+---
+
+<Layout title="Weekly">
+	<h1>Zihan Weekly</h1>
+	<p>
+		Zihan Weekly shares the latest and high qualified things about web
+		development every week. It's published every Sunday.
+	</p>
+	<A href="/weekly/rss.xml">RSS</A>
+	<div id="weeklies">
+		{posts.map((post) => <WeeklyCard weekly={post} />)}
+	</div>
+</Layout>
+
+<style lang="sass">
+	@import "style"
+
+	h1
+		font-family: $serif
+
+	p
+		font-size: 1.3em
+
+	#weeklies
+		margin-top: 3.5em
+		@include desk
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			gap: 1.7em
+</style>
