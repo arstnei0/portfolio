@@ -6,6 +6,7 @@ import "~/styles/typography.sass"
 import Sidebar from "~/components/layout/Sidebar"
 import Tags from "~/components/functional/Tags.astro"
 import { getDateString } from "~/lib/date"
+import Giscus from "~/components/functional/Giscus.astro"
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getCollection("weekly")
