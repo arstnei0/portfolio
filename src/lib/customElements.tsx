@@ -1,4 +1,4 @@
-import setup1 from "./customEl/hoverable"
+import setup1 from "./customEl/hoverableElement"
 import setup2 from "./customEl/heading"
 
 setup1()

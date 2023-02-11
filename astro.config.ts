@@ -5,6 +5,8 @@ import compress from "astro-compress"
 import { SITE_URL } from "./src/config"
 import { rehypePlugins } from "./src/lib/rehype"
 import HEADING_STYLE from "./src/styles/heading.css?raw"
+import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin"
+import mdx from "@astrojs/mdx"
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +16,7 @@ export default defineConfig({
 		compress({
 			css: false,
 		}),
+		mdx(),
 	],
 	site: SITE_URL,
 	vite: {
@@ -28,6 +31,7 @@ export default defineConfig({
 		define: {
 			HEADING_STYLE: `\`${HEADING_STYLE}\``,
 		},
+		plugins: [vanillaExtractPlugin()],
 	},
 	markdown: {
 		shikiConfig: {
