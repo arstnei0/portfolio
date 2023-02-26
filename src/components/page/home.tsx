@@ -1,4 +1,4 @@
-import { Component, JSX, createSignal } from "solid-js"
+import { Component, JSX, createSignal, onMount } from "solid-js"
 import "~/styles/home.sass"
 import { Button } from "../ui/Button"
 import { HomeParallaxPart1 } from "./home/HomeParallaxPart1"
@@ -8,6 +8,7 @@ import { Dialog } from "../ui/Dialog"
 import { AGE, EMAIL, EMAIL_URL, GITHUB_URL, TWITTER_URL } from "~/config"
 import { FavouriteStacks } from "./home/FavouriteStacks"
 import { BesidesThis } from "./home/BesidesThis"
+import { trpc } from "~/lib/trpc"
 
 export const IndexPage: Component<{ children: JSX.Element }> = (props) => {
 	const [workWithMeOpen, setWorkWithMeOpen] = createSignal(false)

@@ -7,6 +7,8 @@ import Layout from "~/layouts/Layout.astro"
 import { sortWeekly } from "~/lib/weekly"
 
 const posts = sortWeekly(sortWeekly((await getCollection("weekly")) as any))
+
+export const prerender = true
 ---
 
 <Layout title="Weekly">

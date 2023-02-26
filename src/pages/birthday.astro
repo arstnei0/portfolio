@@ -1,0 +1,58 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import { db } from "~/server/db"
+import "./birthday.sass"
+import Birthday from "~/components/page/Birthday.svelte"
+
+const votes = await db.vote.count()
+const latest = await Promise.all(
+	[votes, votes - 1, votes - 2, votes - 3].map(
+		async (id) =>
+			await db.vote.findUnique({
+				where: {
+					id,
+				},
+			})
+	)
+)
+---
+
+<Layout title="Zihan's Birthday">
+	<div class="birthday-container">
+		<h1>
+			Hi, I am <span id="shine-1">Zihan</span>! My <span id="shine-2"
+				>birthday</span
+			> is coming!🎂🎉🥳
+		</h1>
+		<p>
+			My birthday is on <span id="date">1st, March</span>.<br /> Wanna celebrate
+			my birthday?
+		</p>
+		<p id="celebrated">
+			<span id="votes">{votes}</span> people celebrated my birthday!
+		</p>
+
+		<div id="latest">
+			<h2>Latest messages left from others</h2>
+			<div id="msgs">
+				{
+					latest.map((msg) => (msg ? (
+						<>
+							<div class="msg">
+								<>
+									<h3>{msg?.name || "Anonymous"}</h3>
+									<p>
+										{msg?.msg ||
+											`He/She didn't write anything!`}
+									</p>
+								</>
+							</div>
+						</>
+					) : <></>))
+				}
+			</div>
+		</div>
+
+		<Birthday client:idle />
+	</div>
+</Layout>

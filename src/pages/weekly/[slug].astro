@@ -4,9 +4,7 @@ import { GetStaticPaths } from "astro"
 import Layout from "~/layouts/Layout.astro"
 import "~/styles/typography.sass"
 import Sidebar from "~/components/layout/Sidebar"
-import Tags from "~/components/functional/Tags.astro"
 import { getDateString } from "~/lib/date"
-import Giscus from "~/components/functional/Giscus.astro"
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	const posts = await getCollection("weekly")
@@ -20,6 +18,8 @@ const { slug } = Astro.params as { slug: CollectionEntry<"weekly">["slug"] }
 const post = await getEntryBySlug("weekly", slug)
 const content = await post.render()
 const { Content, headings } = content
+
+export const prerender = true
 ---
 
 <Layout title={post.data.title}>

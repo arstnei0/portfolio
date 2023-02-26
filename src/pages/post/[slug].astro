@@ -20,6 +20,8 @@ const { slug } = Astro.params as { slug: CollectionEntry<"blog">["slug"] }
 const post = await getEntryBySlug("blog", slug)
 const content = await post.render()
 const { Content, headings } = content
+
+export const prerender = true
 ---
 
 <Layout title={post.data.title}>

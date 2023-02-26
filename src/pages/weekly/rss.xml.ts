@@ -4,6 +4,8 @@ import { getCollection } from "astro:content"
 import { SITE_URL } from "~/config"
 import { getUrlFromWeeklySlug } from "~/lib/weekly"
 
+export const prerender = true
+
 export const get: APIRoute = async (context) => {
 	const posts = await getCollection("weekly")
 

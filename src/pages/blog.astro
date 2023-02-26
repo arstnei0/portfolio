@@ -5,6 +5,8 @@ import Layout from "~/layouts/Layout.astro"
 import { filterPosts, sortPosts } from "~/lib/post"
 
 const posts = filterPosts(sortPosts((await getCollection("blog")) as any))
+
+export const prerender = true
 ---
 
 <Layout title="My blog posts">

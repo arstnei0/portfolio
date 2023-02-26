@@ -14,6 +14,8 @@ export const getStaticPaths: GetStaticPaths = async (params) => {
 const { tag = "" } = Astro.params
 
 const posts = sortPosts(getTags((await getCollection("blog")) as any)[tag])
+
+export const prerender = true
 ---
 
 <Layout title="Blog posts filtered">
